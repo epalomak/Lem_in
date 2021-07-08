@@ -6,7 +6,7 @@
 /*   By: epalomak <epalomak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 11:35:14 by epalomak          #+#    #+#             */
-/*   Updated: 2021/07/02 16:11:05 by epalomak         ###   ########.fr       */
+/*   Updated: 2021/07/08 16:11:40 by epalomak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ void	display_error(int i)
 {
 	if (i == 1)
 		ft_printf("Error : Invalid antfarm");
+	if (i == 2)
+		ft_printf("Error : Invalid room");
+	if (i == 3)
+		ft_printf("Error : Link has a invalid room name");
+	if (i == 4)
+		;
 }
 
 static	int	amount_of_ants()
@@ -41,6 +47,7 @@ static	void	set_struct(t_lem *antfarm)
 {
 	antfarm->start = '\0';
 	antfarm->end = '\0';
+	antfarm->room_nbr = 0;
 }
 
 static	void	read_input(t_lem *antfarm)
@@ -55,11 +62,11 @@ static	void	read_input(t_lem *antfarm)
 			i++;
 		else if (!ft_strcmp(line, "##end"))
 			i++;
-		else if (ft_strchr(line, ' ') && !ft_strchr(line, '-'))
+		else if (ft_strchr(line, ' ') && !ft_strchr(line, '-') && line[0] != '#')
 			is_room(line, &antfarm, i);
 		else if (ft_strchr(line, '-') && !ft_strchr(line, ' '))
 			is_link(antfarm, line);
-		else
+		else if(line[0] != '#' || line != '\n') 
 		{
 			free(line);
 			display_error(1);

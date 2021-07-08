@@ -6,7 +6,7 @@
 /*   By: epalomak <epalomak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 12:47:41 by epalomak          #+#    #+#             */
-/*   Updated: 2021/07/02 15:44:10 by epalomak         ###   ########.fr       */
+/*   Updated: 2021/07/08 16:08:22 by epalomak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct	s_lem
 	char			*end;
 	char			**links;
 	char			**names;
+	int				room_nbr;
 	struct s_links	*links;
 	
 
@@ -35,5 +36,9 @@ typedef struct		s_links
 	struct s_link	*next;
 }					t_links;
 
+void	display_error(int i);
+void	is_room(char *line, t_lem *antfarm, int i);
+void	is_link(char *line, t_lem *antfarm);
+int		ft_str_search(char **array, char *str, int count);
 
 #endif
