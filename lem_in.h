@@ -6,7 +6,7 @@
 /*   By: epalomak <epalomak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 12:47:41 by epalomak          #+#    #+#             */
-/*   Updated: 2021/07/08 16:08:22 by epalomak         ###   ########.fr       */
+/*   Updated: 2021/07/30 14:30:25 by epalomak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct	s_lem
 	char			**names;
 	int				room_nbr;
 	struct s_links	*links;
-	
 
 }					t_lem;
 

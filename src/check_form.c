@@ -6,7 +6,7 @@
 /*   By: epalomak <epalomak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 11:35:20 by epalomak          #+#    #+#             */
-/*   Updated: 2021/07/08 16:13:37 by epalomak         ###   ########.fr       */
+/*   Updated: 2021/07/30 14:30:33 by epalomak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,16 @@
 
 void	is_link(char *line, t_lem *antfarm)
 {
-	
+		int 	i;
+		char	**room;
+
+		room = ft_strsplit(line, '-');
+		if (!(ft_str_search(antfarm->names, room[0],antfarm->room_nbr)))
+			display_error(3);
+		if (!(ft_str_search(antfarm->names, room[1],antfarm->room_nbr)))
+			display_error(3);
+		
+		
 }
 
 void	is_command(char *line, t_lem *antfarm)

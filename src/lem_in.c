@@ -6,7 +6,7 @@
 /*   By: epalomak <epalomak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 11:35:14 by epalomak          #+#    #+#             */
-/*   Updated: 2021/07/08 16:11:40 by epalomak         ###   ########.fr       */
+/*   Updated: 2021/07/30 14:27:44 by epalomak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ static	void	set_struct(t_lem *antfarm)
 	antfarm->start = '\0';
 	antfarm->end = '\0';
 	antfarm->room_nbr = 0;
+	
 }
 
 static	void	read_input(t_lem *antfarm)
@@ -79,7 +80,9 @@ static	void	read_input(t_lem *antfarm)
 int	main(void)
 {
 	t_lem	*antfarm;
+	t_links	*links;
 
+	links = (t_links*)malloc(sizeof(t_links));
 	antfarm = (t_lem*)malloc(sizeof(t_lem));
 	set_struct(&antfarm);
 	antfarm->n_ants = amount_of_ants();
