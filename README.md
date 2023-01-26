@@ -1,6 +1,6 @@
 # lem_in
 Finding optimal route for ants through an ant-farm.
-Done with Thiniv2 https://github.com/thiniv2.
+Done with Thiniv2 https://github.com/thiniv2. 
 
 ## Objectives
 The goal of this project is to find the most optimal 
